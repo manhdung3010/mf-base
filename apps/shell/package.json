@@ -1,0 +1,10 @@
+{
+  "name": "shell",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "webpack serve --config webpack.config.js --mode development",
+    "build": "webpack --config webpack.config.js --mode production",
+    "lint": "eslint src --ext .ts,.tsx,.js,.jsx",
+    "test": "echo 'No tests yet'"
+  }
+} 

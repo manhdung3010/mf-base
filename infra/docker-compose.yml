@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  shell:
+    build: ../apps/shell
+    ports: ['3000:3000']
+  admin:
+    build: ../apps/admin
+    ports: ['3001:3001']
+  auth:
+    build: ../apps/auth
+    ports: ['3002:3002']
+  cart:
+    build: ../apps/cart
+    ports: ['3003:3003']
+  dashboard:
+    build: ../apps/dashboard
+    ports: ['3004:3004']
+  product:
+    build: ../apps/product
+    ports: ['3005:3005']
+  nginx:
+    image: nginx:alpine
+    ports: ['80:80']
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - shell
+      - admin
+      - auth
+      - cart
+      - dashboard
+      - product 

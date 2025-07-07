@@ -1,0 +1,7 @@
+site_name: MF Base Docs
+nav:
+  - Home: index.md
+  - Architecture: architecture.md
+  - UI Kit: ui-kit.md
+  - State: state.md
+  - Deployment: deployment.md 

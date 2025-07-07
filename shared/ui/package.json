@@ -1,0 +1,11 @@
+{
+  "name": "ui",
+  "version": "1.0.0",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "build": "echo 'No build for UI kit'",
+    "lint": "eslint src --ext .ts,.tsx,.js,.jsx",
+    "test": "echo 'No tests yet'"
+  }
+} 
