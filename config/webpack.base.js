@@ -21,11 +21,35 @@ module.exports = ({ appName, exposes = {}, remotes = {}, port }) => ({
       exposes,
       remotes,
       shared: {
-        react: { singleton: true, requiredVersion: false },
-        'react-dom': { singleton: true, requiredVersion: false },
-        zustand: { singleton: true, requiredVersion: false },
+        react: { 
+          singleton: true, 
+          requiredVersion: false,
+          eager: true
+        },
+        'react-dom': { 
+          singleton: true, 
+          requiredVersion: false,
+          eager: true
+        },
+        'react-router-dom': {
+          singleton: true,
+          requiredVersion: false,
+          eager: true
+        },
+        zustand: { 
+          singleton: true, 
+          requiredVersion: false,
+          eager: true
+        },
       },
     }),
   ],
-  devServer: { port, historyApiFallback: true, hot: true },
+  devServer: { 
+    port, 
+    historyApiFallback: true, 
+    hot: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
+  },
 }); 

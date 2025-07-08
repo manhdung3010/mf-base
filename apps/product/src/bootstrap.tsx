@@ -1,8 +1,16 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import App from './App';
+// Import CSS synchronously to avoid TypeScript issues
 import './index.css';
 
-const container = document.getElementById('root');
-const root = createRoot(container!);
-root.render(<App />); 
+import('./App').then(({ default: App }) => {
+  import('react').then(({ default: React }) => {
+    import('react-dom/client').then(({ createRoot }) => {
+      const container = document.getElementById('root');
+      if (container) {
+        const root = createRoot(container);
+        root.render(React.createElement(App));
+      }
+    });
+  });
+}).catch(err => {
+  console.error('Error loading app:', err);
+}); 

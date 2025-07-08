@@ -1,4 +1,5 @@
 const base = require('../../config/webpack.base');
+
 module.exports = base({
   appName: 'shell',
   exposes: {
